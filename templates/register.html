@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <!--Open Graph Properties-->
+    <meta property="og:site_name" content="SnapYo"/>
+    <meta property="og:description" content="Share supprise pictures with your friend"/>
+    <meta property="og:title" content="SnapYo!"/>
+    <meta property="og:image" content="http://snap-yo.appspot.com/{{ url_for('static', filename='logo.png') }}"/>
+    <meta property="og:image:width" content="1500" /> 
+    <meta property="og:image:height" content="1500" />
+    <!--End open graph properties-->
+  <title>SnapYo</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/webflow.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/snapyo.webflow.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-4">
+          <a href="/"><img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" width="50"></a>
+          <div class="app-name">Snapyo</div>
+        </div>
+        <div class="w-col w-col-8 nav-column">
+          <h1>Surprise images for your friends</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="section hero">
+    <div class="w-container">
+      <div class="w-row">
+         <div class="w-form">
+              <h1>REGISTER</h1>
+              <form id="wf-form-Name-form" name="form" action="/register" method="POST">
+                <h2>Email</h2>
+                <h2 style="color:red;">{{error_message}}</h2>
+                <input class="w-input" type="text" placeholder="Enter your username" name="username"  autofocus="autofocus">
+                <h2>Password</h2>
+                <input class="w-input" type="password" name="password" placeholder="Enter password">
+                <input class="w-button button" type="submit" value="Register">
+                 <h2>Have an account already? <a href="/login">Login here</a></h2>
+              </form>
+            </div>
+      </div>
+</body>
+</html>

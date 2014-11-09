@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <!--Open Graph Properties-->
+    <meta property="og:site_name" content="SnapYo"/>
+    <meta property="og:description" content="Share supprise pictures with your friend"/>
+    <meta property="og:title" content="SnapYo!"/>
+    <meta property="og:image" content="http://snap-yo.appspot.com/{{ url_for('static', filename='logo.png') }}"/>
+    <meta property="og:image:width" content="1500" /> 
+    <meta property="og:image:height" content="1500" />
+    <!--End open graph properties-->
+  <title>SnapYo</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/webflow.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/snapyo.webflow.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    function copy(text) {
+    window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+    };
+  </script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-4">
+          <a href="/"><img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" width="50"></a>
+          <div class="app-name">Snapyo</div>
+        </div>
+        <div class="w-col w-col-8 nav-column">
+          <h1>Everyday a new SnapYo</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="section hero">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-3">
+          <h6>♀</h6>
+        </div>
+        <div class="w-col w-col-6">
+          <div>
+            <h2>Enter email for daily SnapYos </h2>
+            <div class="w-form">
+              <form id="wf-form-Name-form" name="form" action="/daily" method="POST">
+                <input class="w-input" id="email-2" type="text" placeholder="Enter your friends email" name="email" autofocus="autofocus">
+                <input class="w-button button" type="submit" value="Sign up for daily SnapYo">
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="w-col w-col-3">
+          <h6>♂</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about_sec">
+    <div class="w-container"></div>
+  </div>
+</body>
+</html>

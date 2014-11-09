@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <!--Open Graph Properties-->
+    <meta property="og:site_name" content="SnapYo"/>
+    <meta property="og:description" content="Share supprise pictures with your friend"/>
+    <meta property="og:title" content="SnapYo!"/>
+    <meta property="og:image" content="http://snap-yo.appspot.com/{{ url_for('static', filename='logo.png') }}"/>
+    <meta property="og:image:width" content="1500" /> 
+    <meta property="og:image:height" content="1500" />
+    <!--End open graph properties-->
+  <title>SnapYo</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/colorbox.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/webflow.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/snapyo.webflow.css') }}">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script src="{{ url_for('static', filename='js/colorbox-min.js') }}"></script>
+  <script type="text/javascript">
+  function httpGet(theUrl)
+{
+    var xmlHttp = null;
+
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false );
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+};
+</script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-4">
+          <a href="/"><img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" width="50"></a>
+          <div class="app-name">Cat-dog-yo</div>
+        </div>
+        <div class="w-col w-col-8 nav-column">
+          <h1>Surprise images for your friends</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="section hero">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-3">
+          <h6>CAT</h6>
+        </div>
+        {% if username %}
+        <div class="w-col w-col-6">
+          
+          <div>
+            <h2>Hello {{username}}</h2>
+             
+             <form id="wf-form-Name-form" name="form" action="/" method="POST">
+                <input class="w-input" type="text" placeholder="Enter your friends username" name="recipient"  autofocus="autofocus">
+                <input class="w-button button" type="submit" value="Send SnapYo">
+              </form>
+              {% if confirm %}
+                <h2>{{confirm}}</h2>
+              {% endif %}
+          </div>
+          {% for snap in snaps %}
+              <h2><a id="{{snap.sid}}" onclick="show_snap('{{snap.sid}}')"class='gallery' href='{{snap.url}}'>Snap from {{snap.sender}}</a></h2>
+          {% endfor %}
+           <script>
+            function show_snap(sid) {
+            $('a.gallery').colorbox({scalePhotos: true,maxHeight: '100%'});
+            window.setTimeout(function() {
+              $.colorbox.close();
+              resp = httpGet("http://cat-dog-yo.appspot.com/del_snap/" + sid);
+              $('#'+sid).hide();
+            }, 3000);
+
+            }
+
+          </script>
+        </div>
+        {% else %}
+        <div class="w-col w-col-6">
+          <div>
+            <h2>Please login to use CATDOG!</h2>
+            <h2><a href="/login">Login</a></h2>
+            <h2><a href="/register">Register</a></h2>
+            </div>
+        </div>
+        {% endif %}
+        <div class="w-col w-col-3">
+          <h6>DOG</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about_sec">
+    <div class="w-container"></div>
+  </div>
+</body>
+</html>

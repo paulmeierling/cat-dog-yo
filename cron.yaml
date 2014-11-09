@@ -1,0 +1,12 @@
+cron:
+- description: Get dogs
+  url: /get_reddit_json/dogpictures
+  schedule: every 24 hours
+
+- description: Get cats
+  url: /get_reddit_json/cats
+  schedule: every 24 hours
+
+- description: Send daily SnapYos
+  url:  /daily_cron
+  schedule: every 24 hours

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+      <!--Open Graph Properties-->
+    <meta property="og:site_name" content="SnapYo"/>
+    <meta property="og:description" content="Open it to receive a supprise picture!"/>
+    <meta property="og:title" content="SnapYo for {{name}}!"/>
+    <meta property="og:image" content="http://snap-yo.appspot.com/{{ url_for('static', filename='logo.png') }}"/>
+    <meta property="og:image:width" content="1500" /> 
+    <meta property="og:image:height" content="1500" />
+    <!--End open graph properties-->
+
+  <title>SnapYo</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/webflow.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/snapyo.webflow.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+function view() {
+    document.getElementById("button").style.display = "none";
+    url = httpGet("http://snap-yo.appspot.com/get_pic?name={{name}}")
+    document.getElementById("pic").src = url;
+    document.getElementById("pic").alt = url;
+    document.getElementById("pic").style.display = "";
+    setTimeout(function(){
+      document.getElementById("pic").style.display = "none";
+      document.getElementById("snap_con").style.display = "none";
+      document.getElementById("link_con").style.display = "";
+
+  },3000)
+};
+
+function httpGet(theUrl)
+{
+    var xmlHttp = null;
+
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false );
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+};
+
+</script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-4">
+          <a href="/"><img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" width="50"></a>
+          <div class="app-name">Snapyo</div>
+        </div>
+        <div class="w-col w-col-8 nav-column">
+          <h1>Surprise images for your friends</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="snap_sec">
+    <div class="w-container" id="snap_con">
+      <div class="snap_block">
+        <h2> This is a SnapYo for {{name}} </h1>
+        <button class="w-button button" id="button" type="button" onclick="view()">View it</button>
+        <img class="snap" style="color:white" id="pic" src="" width="500" alt="">
+      </div>
+    </div>
+    <div class="w-container" style="display: None" id="link_con">
+      <div class="snap_block">
+        <h2><a href="/"> Now you can send SnapYo! to your friend</a></h1>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/webflow.js"></script>
+  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+</body>
+</html>

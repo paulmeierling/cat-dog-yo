@@ -1,0 +1,336 @@
+body {
+  font-family:'Open Sans', sans-serif;
+  color: #333;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 300;
+}
+
+a:link {
+  color: #268abe;
+  text-decoration: none;
+}
+a:visited {
+    color: #268abe;
+    text-decoration: none;
+}
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+h1 {
+  display: block;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  font-family:'Open Sans', sans-serif;
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 300;
+  color: white;
+}
+h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family:'Open Sans', sans-serif;
+  color: white;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 300;
+  text-align: center;
+}
+h3 {
+  margin: 10px 0px 23px;
+  font-family: 'Open Sans', sans-serif;
+  color: #745785;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+}
+h4 {
+  margin: 10px 0px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+h5 {
+  margin: 10px 0px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+}
+h6 {
+  margin: 80px 0px 10px;
+  color: white;
+  font-size: 200px;
+  line-height: 18px;
+  font-weight: 300;
+  text-align: center;
+}
+p {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Open Sans', sans-serif;
+  color: #a1a1a1;
+  font-size: 15px;
+  line-height: 23px;
+}
+.button {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 18px 21px;
+  border-radius: 5px;
+  background-color: #489fd9;
+  box-shadow: rgba(255, 255, 255, 0.29) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.27) 0px 2px 11px 0px;
+  -webkit-transition: background-color 300ms ease;
+  -o-transition: background-color 300ms ease;
+  transition: background-color 300ms ease;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+.button:hover {
+  background-color: #745785;
+  -webkit-transition-delay: initial;
+  -o-transition-delay: initial;
+  transition-delay: initial;
+}
+.button.app-button {
+  padding: 8px 17px;
+}
+.section {
+  padding-top: 65px;
+  padding-bottom: 65px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+.section.hero {
+  margin-bottom: 0px;
+  padding: 120px 86px;
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+}
+.section.grey {
+  background-color: #f5f6f7;
+}
+.section.grey.footer {
+  padding-top: 49px;
+  padding-bottom: 49px;
+  text-align: center;
+}
+.section.purple {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #745785;
+}
+.app-name {
+  display: inline;
+  margin-top: 1px;
+  margin-right: auto;
+  margin-left: auto;
+  float: none;
+  font-family:'Open Sans', sans-serif;
+  color: #5c5c5c;
+  font-size: 50px;
+  line-height: 20px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+.nav-column {
+  text-align: right;
+}
+.icon-title {
+  margin-top: 22px;
+  margin-bottom: 12px;
+  font-family: Bitter;
+  color: #c1adcc;
+  font-size: 17px;
+  font-weight: 400;
+}
+.price-text {
+  margin-top: 11px;
+  background-image: none;
+  box-shadow: none;
+  color: white;
+  font-size: 25px;
+  line-height: 28px;
+  font-weight: 400;
+  text-shadow: none;
+}
+.logo-in-footer {
+  display: block;
+  margin-top: 22px;
+  margin-right: auto;
+  margin-left: auto;
+  text-shadow: black 0px 0px 0px;
+}
+.social-button {
+  width: 36px;
+  height: 36px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-top: 7px;
+  border-radius: 60px;
+  background-color: #745785;
+  -webkit-transition: background-color 300ms ease;
+  -o-transition: background-color 300ms ease;
+  transition: background-color 300ms ease;
+}
+.social-button:hover {
+  background-color: #f02e4e;
+}
+.footer-text {
+  display: inline;
+}
+.center {
+  text-align: center;
+}
+.navbar {
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+.social-widget {
+  display: inline-block;
+  margin-top: 17px;
+  margin-right: 14px;
+}
+.text-link {
+  color: #745785;
+  text-decoration: none;
+}
+.text-link:hover {
+  text-decoration: underline;
+}
+.button-block {
+  margin-top: 17px;
+}
+.logo {
+  display: inline-block;
+  margin-right: 10px;
+  padding-bottom: 30px;
+  float: none;
+}
+.info {
+  border-bottom: 1px none rgba(0, 0, 0, 0.61);
+  color: #745785;
+  font-size: 30px;
+}
+.info_sec {
+  margin-top: 20px;
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+}
+.info_con {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+.about_sec {
+  margin-top: 20px;
+}
+.snap {
+  display: block;
+  width: auto;
+  height: 400px;
+  margin: 10px auto;
+}
+.snap_con {
+  background-color: transparent;
+}
+.snap_sec {
+  margin-top: 0px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #745785;
+  background-image: url('../images/background.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: scroll;
+}
+
+.snap {
+  display: block;
+  width: auto;
+  height: 600px;
+  margin: 10px auto;
+}
+.snap_con {
+  background-color: transparent;
+}
+@media (max-width: 991px) {
+  p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .section.hero {
+    padding-top: 34px;
+    padding-bottom: 1px;
+  }
+}
+@media (max-width: 767px) {
+  h2 {
+    margin-top: 0px;
+  }
+  .section {
+    padding-top: 33px;
+    padding-bottom: 33px;
+    text-align: center;
+  }
+  .section.hero {
+    padding-right: 38px;
+    padding-bottom: 52px;
+    padding-left: 38px;
+    text-align: center;
+  }
+  .app-name {
+    display: inline-block;
+    margin-bottom: 0px;
+  }
+  .nav-column {
+    padding-top: 22px;
+    text-align: center;
+  }
+  .price-text {
+    margin-bottom: 31px;
+    box-shadow: none;
+    text-shadow: none;
+  }
+  .center {
+    padding-top: 23px;
+    padding-bottom: 23px;
+  }
+  .navbar {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    text-align: center;
+  }
+  .social-widget {
+    margin-right: 11px;
+    margin-left: 11px;
+  }
+  .logo {
+    display: inline-block;
+    margin-top: -6px;
+    float: none;
+  }
+}
+@media (max-width: 479px) {
+  h3 {
+    font-size: 18px;
+    line-height: 23px;
+  }
+  .section {
+    text-align: center;
+  }
+  .section.white {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .price-text {
+    font-size: 23px;
+  }
+}
+
